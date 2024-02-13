@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Home = () => {
     return (
         <div className="bg-cover flex justify-center h-screen" style={{ backgroundImage: 'url(images/pexels-fwstudio-172276.jpg)' }}>
@@ -13,7 +15,7 @@ export const Home = () => {
                             <div className="text-slate-100 text-center text-xl pl-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> If the </div>
                             <div className="text-slate-100 px-1.5 underline underline-offset-2 text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> meaning </div>
                             <div className="text-slate-100 text-center  text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> of the </div>
-                            <div className="text-slate-100 text-center  px-1.5 underline underline-offset-2 text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> color </div>
+                            <div className="text-slate-100 text-center  px-1.5 underline underline-offset-2 text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> text </div>
                             <div className="text-slate-100 text-center  text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> in the </div>
                             <div className="text-slate-100 text-center  px-1.5 underline underline-offset-2 text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> left box </div>
                             <div className="text-slate-100 text-center  pr-4 text-xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]"> is same as </div>
@@ -34,7 +36,9 @@ export const Home = () => {
 
                     <div className="pt-10 flex justify-center">
                         <div className="mr-14">
-                            <button type="button" className="text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9) bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-semibold rounded-full text-2xl px-9 py-3 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Play!</button>
+                            <Link to="/game">
+                                <button type="button" className="text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9) bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-semibold rounded-full text-2xl px-9 py-3 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Play!</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
