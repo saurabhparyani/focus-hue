@@ -3,7 +3,7 @@ import React from 'react';
 const TextContainer = () => {
     return (
         <div className="flex flex-col h-screen">
-            <div className="flex justify-center text-3xl my-20 text-slate-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]">
+            <div className="flex justify-center text-3xl my-16 text-slate-100 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9)]">
                 Does the meaning match the text color?
             </div>
             <div className="flex justify-center items-center relative">

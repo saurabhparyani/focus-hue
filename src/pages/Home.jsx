@@ -37,7 +37,7 @@ export const Home = () => {
                     <div className="pt-10 flex justify-center">
                         <div className="mr-14">
                             <Link to="/game">
-                                <button type="button" className="text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9) bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-semibold rounded-full text-2xl px-9 py-3 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Play!</button>
+                                <button type="button" className="text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.9) bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-semibold rounded-full text-2xl px-9 py-3 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Click to Play!</button>
                             </Link>
                         </div>
                     </div>
