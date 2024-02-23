@@ -24,6 +24,46 @@ export const Game = () => {
         }
     }, [countdown]);
 
+    const [answer, setAnswer] = useState(null);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (countdown !== 0) return;
+
+            if (event.key === 'ArrowRight') {
+                setAnswer(wordColor.left === textColor.right ? 'correct' : 'wrong');
+            } else if (event.key === 'ArrowLeft') {
+                setAnswer(wordColor.left !== textColor.right ? 'correct' : 'wrong');
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [countdown, wordColor, textColor]);
+
+    useEffect(() => {
+        let timer;
+        if (answer !== null) {
+            timer = setTimeout(() => {
+                setWordColor({
+                    left: colors[Math.floor(Math.random() * colors.length)],
+                    right: colors[Math.floor(Math.random() * colors.length)]
+                });
+                setTextColor({
+                    left: colors[Math.floor(Math.random() * colors.length)],
+                    right: colors[Math.floor(Math.random() * colors.length)]
+                });
+                setAnswer(null);
+            }, 300);
+        }
+
+        return () => clearTimeout(timer);
+    }, [answer]);
+
+
     return (
         <div className="bg-cover h-screen overflow-hidden" style={{ backgroundImage: 'url(images/pexels-fwstudio-172276.jpg)' }}>
             <AppBar />
@@ -34,6 +74,21 @@ export const Game = () => {
                     {countdown}
                 </div>
             }
+
+            {answer === 'correct' &&
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <img src="/images/correctImage.png" alt="Correct" style={{ maxWidth: '200px', maxHeight: '200px' }} />
+                    {console.log("correct")}
+                </div>
+            }
+            {answer === 'wrong' &&
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <img src="/images/wrongImage.png" alt="Wrong" style={{ maxWidth: '200px', maxHeight: '200px' }} />
+                    {console.log("wrong")}
+
+                </div>
+            }
+
         </div>
     );
 }
